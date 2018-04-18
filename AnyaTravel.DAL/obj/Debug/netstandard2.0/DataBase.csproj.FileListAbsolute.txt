@@ -1,0 +1,9 @@
+D:\Univer\6\KP\AnyaTravel\DataBase\bin\Debug\netstandard2.0\DataBase.deps.json
+D:\Univer\6\KP\AnyaTravel\DataBase\bin\Debug\netstandard2.0\DataBase.dll
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DataBase.csprojResolveAssemblyReference.cache
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DataBase.csproj.CoreCompileInputs.cache
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DataBase.AssemblyInfoInputs.cache
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DataBase.AssemblyInfo.cs
+D:\Univer\6\KP\AnyaTravel\DataBase\bin\Debug\netstandard2.0\DataBase.pdb
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DataBase.dll
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DataBase.pdb

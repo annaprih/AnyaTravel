@@ -1,0 +1,5 @@
+D:\Univer\6\KP\AnyaTravel\Services\bin\Debug\netstandard2.0\DataBase.dll
+D:\Univer\6\KP\AnyaTravel\Services\obj\Debug\netstandard2.0\Services.csprojResolveAssemblyReference.cache
+D:\Univer\6\KP\AnyaTravel\Services\obj\Debug\netstandard2.0\Services.csproj.CoreCompileInputs.cache
+D:\Univer\6\KP\AnyaTravel\Services\obj\Debug\netstandard2.0\Services.AssemblyInfoInputs.cache
+D:\Univer\6\KP\AnyaTravel\Services\obj\Debug\netstandard2.0\Services.AssemblyInfo.cs

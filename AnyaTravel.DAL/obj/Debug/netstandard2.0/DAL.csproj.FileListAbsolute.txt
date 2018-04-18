@@ -1,0 +1,9 @@
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DAL.csprojResolveAssemblyReference.cache
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+D:\Univer\6\KP\AnyaTravel\DataBase\bin\Debug\netstandard2.0\DAL.deps.json
+D:\Univer\6\KP\AnyaTravel\DataBase\bin\Debug\netstandard2.0\DAL.dll
+D:\Univer\6\KP\AnyaTravel\DataBase\bin\Debug\netstandard2.0\DAL.pdb
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DAL.dll
+D:\Univer\6\KP\AnyaTravel\DataBase\obj\Debug\netstandard2.0\DAL.pdb
