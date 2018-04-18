@@ -7,7 +7,7 @@ using AnyaTravel.DAL.Interfaces;
 using AnyaTravel.DAL.Models;
 using AutoMapper;
 
-namespace Services.Services
+namespace AnyaTravel.BLL.Services
 {
     public class CityFromService : ICityFromService
     {

@@ -40,3 +40,5 @@ D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.AssemblyInfo
 D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.csproj.CopyComplete
 D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.dll
 D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.pdb
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.BLL.dll
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.BLL.pdb
