@@ -3614,11 +3614,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj",
+      "projectUniqueName": "D:\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj",
       "projectName": "AnyaTravel.DAL",
-      "projectPath": "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj",
+      "projectPath": "D:\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj",
       "packagesPath": "C:\\Users\\annae\\.nuget\\packages\\",
-      "outputPath": "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.DAL\\obj\\",
+      "outputPath": "D:\\AnyaTravel\\AnyaTravel.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

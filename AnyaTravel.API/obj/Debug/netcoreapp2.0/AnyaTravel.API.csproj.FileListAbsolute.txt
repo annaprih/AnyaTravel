@@ -26,3 +26,17 @@ D:\Univer\6\KP\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.
 D:\Univer\6\KP\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.csproj.CopyComplete
 D:\Univer\6\KP\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.dll
 D:\Univer\6\KP\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.pdb
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.API.deps.json
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.API.runtimeconfig.json
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.API.runtimeconfig.dev.json
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.API.dll
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.API.pdb
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.DAL.dll
+D:\AnyaTravel\AnyaTravel.API\bin\Debug\netcoreapp2.0\AnyaTravel.DAL.pdb
+D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.csprojResolveAssemblyReference.cache
+D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.csproj.CoreCompileInputs.cache
+D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.AssemblyInfoInputs.cache
+D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.AssemblyInfo.cs
+D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.csproj.CopyComplete
+D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.dll
+D:\AnyaTravel\AnyaTravel.API\obj\Debug\netcoreapp2.0\AnyaTravel.API.pdb

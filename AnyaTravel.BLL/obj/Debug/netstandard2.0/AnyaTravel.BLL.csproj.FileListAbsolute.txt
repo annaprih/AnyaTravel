@@ -1,0 +1,16 @@
+D:\AnyaTravel\Services\obj\Debug\netstandard2.0\AnyaTravel.BLL.csprojResolveAssemblyReference.cache
+D:\AnyaTravel\Services\obj\Debug\netstandard2.0\AnyaTravel.BLL.csproj.CoreCompileInputs.cache
+D:\AnyaTravel\Services\obj\Debug\netstandard2.0\AnyaTravel.BLL.AssemblyInfoInputs.cache
+D:\AnyaTravel\Services\obj\Debug\netstandard2.0\AnyaTravel.BLL.AssemblyInfo.cs
+D:\AnyaTravel\AnyaTravel.BLL\bin\Debug\netstandard2.0\AnyaTravel.BLL.deps.json
+D:\AnyaTravel\AnyaTravel.BLL\bin\Debug\netstandard2.0\AnyaTravel.BLL.dll
+D:\AnyaTravel\AnyaTravel.BLL\bin\Debug\netstandard2.0\AnyaTravel.BLL.pdb
+D:\AnyaTravel\AnyaTravel.BLL\bin\Debug\netstandard2.0\AnyaTravel.DAL.dll
+D:\AnyaTravel\AnyaTravel.BLL\bin\Debug\netstandard2.0\AnyaTravel.DAL.pdb
+D:\AnyaTravel\AnyaTravel.BLL\obj\Debug\netstandard2.0\AnyaTravel.BLL.csprojResolveAssemblyReference.cache
+D:\AnyaTravel\AnyaTravel.BLL\obj\Debug\netstandard2.0\AnyaTravel.BLL.csproj.CoreCompileInputs.cache
+D:\AnyaTravel\AnyaTravel.BLL\obj\Debug\netstandard2.0\AnyaTravel.BLL.AssemblyInfoInputs.cache
+D:\AnyaTravel\AnyaTravel.BLL\obj\Debug\netstandard2.0\AnyaTravel.BLL.AssemblyInfo.cs
+D:\AnyaTravel\AnyaTravel.BLL\obj\Debug\netstandard2.0\AnyaTravel.BLL.csproj.CopyComplete
+D:\AnyaTravel\AnyaTravel.BLL\obj\Debug\netstandard2.0\AnyaTravel.BLL.dll
+D:\AnyaTravel\AnyaTravel.BLL\obj\Debug\netstandard2.0\AnyaTravel.BLL.pdb

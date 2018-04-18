@@ -12563,11 +12563,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.API\\AnyaTravel.API.csproj",
+      "projectUniqueName": "D:\\AnyaTravel\\AnyaTravel.API\\AnyaTravel.API.csproj",
       "projectName": "AnyaTravel.API",
-      "projectPath": "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.API\\AnyaTravel.API.csproj",
+      "projectPath": "D:\\AnyaTravel\\AnyaTravel.API\\AnyaTravel.API.csproj",
       "packagesPath": "C:\\Users\\annae\\.nuget\\packages\\",
-      "outputPath": "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.API\\obj\\",
+      "outputPath": "D:\\AnyaTravel\\AnyaTravel.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12586,8 +12586,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj": {
-              "projectPath": "D:\\Univer\\6\\KP\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj"
+            "D:\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj": {
+              "projectPath": "D:\\AnyaTravel\\AnyaTravel.DAL\\AnyaTravel.DAL.csproj"
             }
           }
         }

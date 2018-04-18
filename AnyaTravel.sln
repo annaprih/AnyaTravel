@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyaTravel.DAL", "AnyaTravel.DAL\AnyaTravel.DAL.csproj", "{F3908522-E271-4BD4-BDFC-67E3DBDA6272}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{B79B2651-8E14-4250-AA45-EB17C2F82183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyaTravel.BLL", "AnyaTravel.BLL\AnyaTravel.BLL.csproj", "{B79B2651-8E14-4250-AA45-EB17C2F82183}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyaTravel.API", "AnyaTravel.API\AnyaTravel.API.csproj", "{39510E1C-F3E7-42C0-8847-A64FA9D9D7CA}"
 EndProject
