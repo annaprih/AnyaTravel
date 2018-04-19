@@ -57,6 +57,7 @@ namespace AnyaTravel.API
             services.AddScoped<ITourService, TourService>();
             services.AddScoped<ITourTypeService, TourTypeService>();
             services.AddScoped<ITransportTypeService, TransportTypeService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmailService, EmailService>();
 
             services.AddDbContext<ContextDB>(options =>

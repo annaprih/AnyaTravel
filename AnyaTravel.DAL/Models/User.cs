@@ -11,9 +11,6 @@ namespace AnyaTravel.DAL.Models
         public string FIO { get; set; }
 
         [Required]
-        public string Passport { get; set; }
-
-        [Required]
         public DateTime Birthday { get; set; }
         public virtual List<Order> Orders { get; set; }
     }

@@ -1,5 +1,4 @@
-﻿using AnyaTravel.DAL.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
 namespace AnyaTravel.DAL.Context

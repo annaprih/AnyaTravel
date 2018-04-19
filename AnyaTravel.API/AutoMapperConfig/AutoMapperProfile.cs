@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using AnyaTravel.BLL.Data;
-using AnyaTravel.DAL.Models;
+using AnyaTravel.API.ViewModels;
 
 namespace AnyaTravel.API.AutoMapperConfig
 {
@@ -8,6 +8,11 @@ namespace AnyaTravel.API.AutoMapperConfig
     {
         public AutoMapperProfile()
         {
+            CreateMap<SignIn, UserDTO>().ReverseMap();
+            CreateMap<UserDTO, SignUp>().ReverseMap();
+            CreateMap<TourDTO, TourView>().ReverseMap();
+            CreateMap<CityDTO, CityView>().ReverseMap();
+            CreateMap<HotelDTO, HotelView>().ReverseMap();
         }
     }
 }

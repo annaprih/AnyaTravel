@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace AnyaTravel.BLL.Infrastructure
 {
-   public class OperationResult
+    public class OperationResult
     {
         public bool Result { get; set; }
         public IEnumerable<string> Errors { get; set; }

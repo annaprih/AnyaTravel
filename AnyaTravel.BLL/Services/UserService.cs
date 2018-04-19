@@ -49,9 +49,10 @@ namespace AnyaTravel.BLL.Services
             return operationResult;
         }
 
-        async Task<IEnumerable<User>> IUserService.GetUsers()
+        async Task<IEnumerable<UserDTO>> IUserService.GetUsers()
         {
-            return await Task.Factory.StartNew(() => _userManager.Users.ToList());
+            IEnumerable<User> users = await Task.Factory.StartNew(() => _userManager.Users.ToList());
+            return _mapper.Map<IEnumerable<User>, IEnumerable<UserDTO>>(users);
         }
 
         async Task<OperationResult> IUserService.DeleteUser(User user)
@@ -83,7 +84,6 @@ namespace AnyaTravel.BLL.Services
                     Id = userDb.Id,
                     Roles = await _signInManager.UserManager.GetRolesAsync(userDb),
                     FIO = userDb.FIO,
-                    Passport = userDb.Passport,
                     Birthday = userDb.Birthday,
                     Email = userDb.Email,
                     Login = userDb.UserName
@@ -100,7 +100,6 @@ namespace AnyaTravel.BLL.Services
                 Email = userDto.Email,
                 UserName = userDto.Login,
                 FIO = userDto.FIO,
-                Passport = userDto.Passport,
                 Birthday = userDto.Birthday
             };
             IdentityResult result = await _userManager.CreateAsync(user, userDto.Password);
@@ -132,12 +131,24 @@ namespace AnyaTravel.BLL.Services
                 EmailConfirmed = true,
                 Email = "anna_prih@tut.by",
                 FIO = "Прихач Анна Александровна",
-                Passport = "MP3318771",
                 Birthday = new DateTime(1998, 4, 8)
             };
             await _userManager.CreateAsync(user, "a80291227107_A");
             await _userManager.AddToRoleAsync(user, "Admin");
         }
 
+        async Task<OperationResult> IUserService.UpdateUser(CurrentUser currentUser)
+        {
+            User user = await _userManager.FindByNameAsync(currentUser.Login);
+            user.FIO = currentUser.FIO;
+            user.Birthday = currentUser.Birthday;
+            IdentityResult result =  await _userManager.UpdateAsync(user);
+            OperationResult operationResult = new OperationResult
+            {
+                Result = result.Succeeded,
+                Errors = result.Errors.Select(p => p.Description)
+            };
+            return operationResult;
+        }
     }
 }

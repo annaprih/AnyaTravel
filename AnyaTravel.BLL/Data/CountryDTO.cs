@@ -8,5 +8,9 @@ namespace AnyaTravel.BLL.Data
         public string Name { get; set; }
 
         public  List<CityDTO> Cities { get; set; }
+        public CountryDTO()
+        {
+            Cities = new List<CityDTO>();
+        }
     }
 }

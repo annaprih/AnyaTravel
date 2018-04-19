@@ -10,7 +10,6 @@ namespace AnyaTravel.BLL.Data
         public string Password { get; set; }
         public string Email { get; set; }
         public string FIO { get; set; }
-        public string Passport { get; set; }
         public DateTime Birthday { get; set; }
         public  List<OrderDTO> Orders { get; set; }
 
