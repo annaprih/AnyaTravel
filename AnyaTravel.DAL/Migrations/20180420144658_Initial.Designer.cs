@@ -11,7 +11,7 @@ using System;
 namespace AnyaTravel.DAL.Migrations
 {
     [DbContext(typeof(ContextDB))]
-    [Migration("20180418115315_Initial")]
+    [Migration("20180420144658_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,7 +48,7 @@ namespace AnyaTravel.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CityFrom");
+                    b.ToTable("CitiesFrom");
                 });
 
             modelBuilder.Entity("AnyaTravel.DAL.Models.Country", b =>
@@ -244,9 +244,6 @@ namespace AnyaTravel.DAL.Migrations
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
-
-                    b.Property<string>("Passport")
-                        .IsRequired();
 
                     b.Property<string>("PasswordHash");
 

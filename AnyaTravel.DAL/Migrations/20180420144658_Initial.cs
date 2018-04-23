@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
+using System.Collections.Generic;
 
 namespace AnyaTravel.DAL.Migrations
 {
@@ -37,7 +38,6 @@ namespace AnyaTravel.DAL.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
-                    Passport = table.Column<string>(nullable: false),
                     PasswordHash = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     PhoneNumberConfirmed = table.Column<bool>(nullable: false),
@@ -51,7 +51,7 @@ namespace AnyaTravel.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CityFrom",
+                name: "CitiesFrom",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -60,7 +60,7 @@ namespace AnyaTravel.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CityFrom", x => x.Id);
+                    table.PrimaryKey("PK_CitiesFrom", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -315,9 +315,9 @@ namespace AnyaTravel.DAL.Migrations
                 {
                     table.PrimaryKey("PK_Tours", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tours_CityFrom_CityFromId",
+                        name: "FK_Tours_CitiesFrom_CityFromId",
                         column: x => x.CityFromId,
-                        principalTable: "CityFrom",
+                        principalTable: "CitiesFrom",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -509,7 +509,7 @@ namespace AnyaTravel.DAL.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "CityFrom");
+                name: "CitiesFrom");
 
             migrationBuilder.DropTable(
                 name: "FoodTypes");

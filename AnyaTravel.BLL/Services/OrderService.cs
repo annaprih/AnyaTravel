@@ -20,6 +20,8 @@ namespace AnyaTravel.BLL.Services
             _mapper = mapper;
         }
 
+
+
         async Task<OrderDTO> IService<OrderDTO, int>.Add(OrderDTO entity)
         {
             Order order = await _orderRepository.Add(_mapper.Map<OrderDTO, Order>(entity));
@@ -40,7 +42,6 @@ namespace AnyaTravel.BLL.Services
 
         async Task<IEnumerable<OrderDTO>> IService<OrderDTO, int>.Get(Func<OrderDTO, bool> predicate)
         {
-
             Func<Order, bool> order = _mapper.Map<Func<OrderDTO, bool>, Func<Order, bool>>(predicate);
             IEnumerable<Order> orders = await _orderRepository.Get(order);
             return _mapper.Map<IEnumerable<Order>, IEnumerable<OrderDTO>>(orders);
@@ -50,6 +51,12 @@ namespace AnyaTravel.BLL.Services
         {
             Order order = await _orderRepository.Get(id);
             return _mapper.Map<Order, OrderDTO>(order);
+        }
+
+        async Task<IEnumerable<OrderDTO>> IOrderService.Get(Func<Order, bool> predicate)
+        {
+            IEnumerable<Order> orders = await _orderRepository.Get(predicate);
+            return _mapper.Map<IEnumerable<Order>, IEnumerable<OrderDTO>>(orders);
         }
 
         async Task<OrderDTO> IService<OrderDTO, int>.Update(OrderDTO entity)

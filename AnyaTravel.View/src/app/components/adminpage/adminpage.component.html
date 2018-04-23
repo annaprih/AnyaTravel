@@ -1,0 +1,42 @@
+<div *ngIf="!load">
+  <div style="margin-top: 10px">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+      <thead>
+      <tr>
+        <th>Номер заказа</th>
+        <th>Дата заказа</th>
+        <th>Код тура</th>
+        <th>ФИО заказчика</th>
+        <th>Email заказчика</th>
+        <th>Цена</th>
+        <th>Статус заказа</th>
+        <th>Действие</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.date | amLocal | amDateFormat: 'DD-MM-YYYY'}}</td>
+        <td>{{ order.tour.id}}</td>
+        <td>{{ order.user.fIO }}</td>
+        <td>{{ order.user.email}}</td>
+        <td>{{ order.price }}</td>
+        <td *ngIf="order.orderStatus.status==1">Оплачен</td>
+        <td *ngIf="order.orderStatus.status==0">Не оплачен</td>
+        <td>
+          <button  type="button" class="btn btn-default" (click)="updateOrder(order.id)">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </button>
+          <button  type="button" class="btn btn-default" (click)="deleteOrder(order.id)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div *ngIf="load" class="text-center">
+  <h3>Загрузка...</h3>
+</div>
+

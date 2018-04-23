@@ -18,6 +18,7 @@ namespace AnyaTravel.DAL.Repositories
         {
             _context = context;
             _dbSet = _context.Set<FoodType>();
+            _dbSet.Load();
         }
 
         async Task<FoodType> IRepository<FoodType, int>.Add(FoodType entity)

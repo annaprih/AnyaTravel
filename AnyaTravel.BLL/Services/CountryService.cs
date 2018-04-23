@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AnyaTravel.BLL.Data;
 using AnyaTravel.BLL.Interfaces;
@@ -22,7 +23,11 @@ namespace AnyaTravel.BLL.Services
 
         async Task<CountryDTO> IService<CountryDTO, int>.Add(CountryDTO entity)
         {
-            Country country = await _countryRepository.Add(_mapper.Map<CountryDTO, Country>(entity));
+           Country country= (await _countryRepository.Get(prop => prop.Name == entity.Name)).FirstOrDefault();
+            if(country==null)
+            {
+                country = await _countryRepository.Add(_mapper.Map<CountryDTO, Country>(entity));
+            }
             return _mapper.Map<Country, CountryDTO>(country);
         }
 

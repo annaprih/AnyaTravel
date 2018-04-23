@@ -31,7 +31,11 @@ namespace AnyaTravel.API
                   cfg => { cfg.AddProfile(new AutoMapperProfile()); }
               );
 
-            services.AddMvc();
+            services.AddMvc()
+     .AddJsonOptions(options => {
+        options.SerializerSettings.ReferenceLoopHandling =
+            Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    });
             services.AddSingleton(ctx => configMapper.CreateMapper());
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICityFromRepository, CityFromRepository>();
@@ -59,6 +63,8 @@ namespace AnyaTravel.API
             services.AddScoped<ITransportTypeService, TransportTypeService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IStartDataService, StartDataService>();
+
 
             services.AddDbContext<ContextDB>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("AnyaTravel.API")));
@@ -72,8 +78,12 @@ namespace AnyaTravel.API
 
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IUserService userService, IStartDataService startDataService)
         {
+            //userService.SeedDatabse().GetAwaiter().GetResult();
+           // startDataService.AddData().GetAwaiter().GetResult();
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

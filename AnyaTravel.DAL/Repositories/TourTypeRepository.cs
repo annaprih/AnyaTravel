@@ -18,6 +18,7 @@ namespace AnyaTravel.DAL.Repositories
         {
             _context = context;
             _dbSet = _context.Set<TourType>();
+            _dbSet.Load();
         }
 
         async Task<TourType> IRepository<TourType, int>.Add(TourType entity)

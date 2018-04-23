@@ -1,0 +1,2 @@
+D:\AnyaTravel\AnyaTravel.View\obj\Debug\AnyaTravel.View.csprojResolveAssemblyReference.cache
+D:\AnyaTravel\AnyaTravel.View\obj\Debug\AnyaTravel.View.csproj.CoreCompileInputs.cache

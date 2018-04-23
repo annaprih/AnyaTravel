@@ -47,7 +47,7 @@ namespace AnyaTravel.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CityFrom");
+                    b.ToTable("CitiesFrom");
                 });
 
             modelBuilder.Entity("AnyaTravel.DAL.Models.Country", b =>

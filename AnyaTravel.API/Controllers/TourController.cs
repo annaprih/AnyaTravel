@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using AnyaTravel.API.ViewModels;
@@ -110,7 +110,7 @@ namespace AnyaTravel.API.Controllers
 
         [HttpDelete]
         [Route("api/tour/{id}")]
-        public async Task<IActionResult> Delete([FromBody]int id)
+        public async Task<IActionResult> Delete([Required]int id)
         {
             if (ModelState.IsValid)
             {
@@ -127,11 +127,10 @@ namespace AnyaTravel.API.Controllers
 
         [HttpPost]
         [Route("api/tour/addcountry")]
-        public async Task<IActionResult> AddCountry([Required]string name)
+        public async Task<IActionResult> AddCountry([FromBody]CountryDTO country)
         {
             if (ModelState.IsValid)
             {
-                CountryDTO country = new CountryDTO { Name = name };
                 country = await _countryService.Add(country);
                 return Ok(country);
             }

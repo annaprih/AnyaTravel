@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
@@ -35,15 +35,15 @@ namespace AnyaTravel.API.Controllers
         }
 
         [HttpGet]
-        [Route("api/order")]
+        [Route("api/order/currentuser")]
         public async Task<IActionResult> GetByUser()
         {
-            IEnumerable<OrderDTO> orders = await _orderService.Get(order => order.User.Login == User.Identity.Name);
+            IEnumerable<OrderDTO> orders = await _orderService.Get(order => order.User.UserName == User.Identity.Name);
             return Ok(orders);
         }
 
         [HttpPost]
-        [Route("api/order")]
+        [Route("api/order/{tourId}")]
         public async Task<IActionResult> Add([Required]int tourId)
         {
             if (ModelState.IsValid)
@@ -73,7 +73,7 @@ namespace AnyaTravel.API.Controllers
         }
 
         [HttpPut]
-        [Route("api/order")]
+        [Route("api/order/{id}")]
         public async Task<IActionResult> Update([Required]int id)
         {
             if (ModelState.IsValid)
@@ -92,7 +92,7 @@ namespace AnyaTravel.API.Controllers
 
 
         [HttpDelete]
-        [Route("api/order")]
+        [Route("api/order/{id}")]
         public async Task<IActionResult> Delete([Required]int id)
         {
             if (ModelState.IsValid)

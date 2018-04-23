@@ -18,6 +18,7 @@ namespace AnyaTravel.DAL.Repositories
         {
             _context = context;
             _dbSet = _context.Set<OrderStatus>();
+            _dbSet.Load();
         }
 
         async Task<OrderStatus> IRepository<OrderStatus, int>.Add(OrderStatus entity)

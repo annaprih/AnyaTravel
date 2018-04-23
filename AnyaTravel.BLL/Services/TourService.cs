@@ -40,7 +40,6 @@ namespace AnyaTravel.BLL.Services
 
         async Task<IEnumerable<TourDTO>> IService<TourDTO, int>.Get(Func<TourDTO, bool> predicate)
         {
-
             Func<Tour, bool> tour = _mapper.Map<Func<TourDTO, bool>, Func<Tour, bool>>(predicate);
             IEnumerable<Tour> tours = await _tourRepository.Get(tour);
             return _mapper.Map<IEnumerable<Tour>, IEnumerable<TourDTO>>(tours);

@@ -18,6 +18,7 @@ namespace AnyaTravel.DAL.Repositories
         {
             _context = context;
             _dbSet = _context.Set<CityFrom>();
+            _context.CitiesFrom.Load();
         }
 
         async Task<CityFrom> IRepository<CityFrom, int>.Add(CityFrom entity)

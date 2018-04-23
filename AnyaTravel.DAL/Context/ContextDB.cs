@@ -9,6 +9,8 @@ namespace AnyaTravel.DAL.Context
         public ContextDB(DbContextOptions<ContextDB> options) : base(options) { }
 
         public DbSet<City> Cities { get; set; }
+        public DbSet<CityFrom> CitiesFrom { get; set; }
+
         public DbSet<Country> Countries { get; set; }
         public DbSet<FoodType> FoodTypes { get; set; }
         public DbSet<Hotel> Hotels { get; set; }

@@ -18,6 +18,7 @@ namespace AnyaTravel.DAL.Repositories
         {
             _context = context;
             _dbSet = _context.Set<Hotel>();
+            _dbSet.Load();
         }
 
         async Task<Hotel> IRepository<Hotel, int>.Add(Hotel entity)

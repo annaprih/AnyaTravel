@@ -18,6 +18,7 @@ namespace AnyaTravel.DAL.Repositories
         {
             _context = context;
             _dbSet = _context.Set<TransportType>();
+            _dbSet.Load();
         }
 
         async Task<TransportType> IRepository<TransportType, int>.Add(TransportType entity)
