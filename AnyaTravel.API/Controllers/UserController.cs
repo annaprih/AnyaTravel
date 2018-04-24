@@ -32,7 +32,7 @@ namespace AnyaTravel.API.Controllers
 
         [HttpPut]
         [Route("api/user")]
-        public async Task<IActionResult> Update(UserViewModel userModel)
+        public async Task<IActionResult> Update([FromBody]UserViewModel userModel)
         {
             if (ModelState.IsValid)
             {
@@ -40,7 +40,6 @@ namespace AnyaTravel.API.Controllers
               
                 if(user!=null)
                 {
-                    user.Birthday = userModel.Birthday;
                     user.FIO = userModel.FIO;
                     OperationResult result = await _userService.UpdateUser(user);
                     return Ok(result);

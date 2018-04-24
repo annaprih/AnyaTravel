@@ -141,7 +141,6 @@ namespace AnyaTravel.BLL.Services
         {
             User user = await _userManager.FindByNameAsync(currentUser.Login);
             user.FIO = currentUser.FIO;
-            user.Birthday = currentUser.Birthday;
             IdentityResult result =  await _userManager.UpdateAsync(user);
             OperationResult operationResult = new OperationResult
             {

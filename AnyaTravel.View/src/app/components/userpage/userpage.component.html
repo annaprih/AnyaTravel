@@ -4,8 +4,8 @@
     <label>ФИО: </label>
     <ng2-text-editable [(text)]="currentUser.fio" (toggled)="updateUser($event)"></ng2-text-editable>
     <br/>
-    <label>День рождения: </label>
-    <ng2-text-editable (toggled)="updateUser($event)">{{currentUser.birthday| amLocal | amDateFormat: 'DD-MM-YYYY'}}</ng2-text-editable>
+    <label>Дата рождения: </label>
+    <label>{{currentUser.birthday| amLocal | amDateFormat: 'DD-MM-YYYY'}}</label>
     <br/>
     <label>Логин: </label>
     <label>{{currentUser.login}}</label><br/>
@@ -25,7 +25,7 @@
         <th>Город прибытия</th>
         <th>Дата отправления</th>
         <th>Дата прибытия</th>
-        <th>Цена</th>
+        <th>Цена$</th>
         <th>Статус заказа</th>
       </tr>
       </thead>
@@ -33,8 +33,8 @@
       <tr *ngFor="let order of orders">
         <td>{{ order.id }}</td>
         <td>{{ order.date | amLocal | amDateFormat: 'DD-MM-YYYY'}}</td>
-        <td>{{ order.cityFrom.city}}</td>
-        <td>{{ order.hotel.city.name }}</td>
+        <td>{{ order.tour.cityFrom.city}}</td>
+        <td>{{ order.tour.hotel.city.name }}</td>
         <td>{{ order.tour.dateFrom | amLocal | amDateFormat: 'DD-MM-YYYY'}}</td>
         <td>{{ order.tour.dateTo | amLocal | amDateFormat: 'DD-MM-YYYY'}}</td>
         <td>{{ order.price }}</td>

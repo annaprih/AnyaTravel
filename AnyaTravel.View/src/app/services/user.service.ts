@@ -19,7 +19,7 @@ export class UserService {
   public async updateUser(user): Promise<ServerResponse<any>> {
     let result: ServerResponse<any> = new ServerResponse<any>();
     try {
-      let response = await this._http.put(`api/user/`, user).toPromise();
+      let response = await this._http.put(`api/user`, user).toPromise();
       result = this.parseResponse(response);
     } catch (ex) {
       result = this.parseResponse(ex);

@@ -17,8 +17,25 @@ import 'rxjs/add/operator/map';
 export class UserPageComponent implements OnInit {
 
   @ViewChild(DataTableDirective) dtElement: DataTableDirective;
+  public order ={
+    id:"",
+    date: "",
+    cityFrom:{
+      city:""
+    },
+    tour:{
+      dateFrom:"",
+      dateTo:""
+    },
+    price:"",
+    orderStatus:{
+      status:""
+    }
+  };
 
   public orders = [];
+
+
   public currentUser: any = {
     id: "",
     isAuntificated: false,
@@ -51,21 +68,20 @@ export class UserPageComponent implements OnInit {
 
   async ngOnInit() {
 
-      this.currentUser = await this.httpAuthService.GetCurrentUser();
-       this.orders = await this.orderService.getOrdersByUser();
+    this.currentUser = await this.httpAuthService.GetCurrentUser();
+    this.orders = await this.orderService.getOrdersByUser();
+    console.log(this.orders);
     this.dtTrigger.next();
   }
 
   async updateUser(event) {
     if (event.isChanged) {
       let userUpdateInfo = {
-        fIO: this.currentUser.fIO,
-        birthday: this.currentUser.birthday,
+        fio: this.currentUser.fio
       };
       let response: ServerResponse<any> = await this.userService.updateUser(userUpdateInfo);
       if (response.statusCode == 200) {
-        this.currentUser.fIO = response.data.fIO;
-        this.currentUser.birthday = response.data.birthday;
+        this.currentUser = await this.httpAuthService.GetCurrentUser();
       } else {
         console.log(response);
       }

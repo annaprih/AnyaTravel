@@ -1,0 +1,18 @@
+<div *ngIf="!load" style="margin-top: 30px">
+  <div class="dropdown">
+       <div class="dropdown-menu">
+      <button *ngFor="let tourType of tourInformation.tourType.type" class="dropdown-item" ></button>
+    </div>
+  </div>
+
+
+  <input type="text" [(ngModel)]="tour.price" class="form-control col-md-3 mb-3"
+         placeholder="Цена">
+  <button class="col-md-2 offset-md-5 btn btn-lg btn-primary btn-block" (click)="create()" type="submit">Создать
+  </button>
+  <div *ngFor="let error of errors">{{error}}</div>
+</div>
+<div *ngIf="load" class="text-center">
+  <h3>Загрузка...</h3>
+</div>
+

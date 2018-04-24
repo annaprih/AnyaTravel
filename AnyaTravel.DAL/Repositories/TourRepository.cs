@@ -62,7 +62,7 @@ namespace AnyaTravel.DAL.Repositories
             Tour tour;
             try
             {
-                tour = await _dbSet.FindAsync(id);
+                tour = await Task.Factory.StartNew(() => _dbSet.Include(p => p.Hotel.PlacementType).Where(t => t.Id == id).FirstOrDefault());
             }
             catch
             {

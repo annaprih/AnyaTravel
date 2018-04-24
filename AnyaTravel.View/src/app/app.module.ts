@@ -24,6 +24,8 @@ import {SignUpComponent} from './components/signUp/signUp.component';
 import {HomeComponent} from "./components/home/home.component";
 import {UserPageComponent} from "./components/userpage/userpage.component";
 import {AdminPageComponent} from './components/adminpage/adminpage.component';
+import {TourViewComponent} from './components/tourview/tourview.component';
+import {CreateTourComponent} from './components/createtour.component/createtour.component';
 
 
 
@@ -32,8 +34,10 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signUp', component: SignUpComponent},
   {path: 'user', component: UserPageComponent},
-  {path: 'admin', component: AdminPageComponent}
-
+  {path: 'admin', component: AdminPageComponent},
+  {path: 'tourView/:tourId', component: TourViewComponent},
+  {path: 'createTour', component: CreateTourComponent},
+  {path: '**', component: HomeComponent}
 ];
 
 @NgModule({
@@ -43,7 +47,9 @@ const appRoutes: Routes = [
     SignUpComponent,
     HomeComponent,
     UserPageComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    TourViewComponent,
+    CreateTourComponent
   ],
   imports: [
     BrowserModule,

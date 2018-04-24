@@ -19,8 +19,20 @@ export class TourService {
     return (await this._http.get('/api/tour').toPromise()).json();
   }
 
-  public async getTourById(id: number): Promise<any> {
-    return (await this._http.get('/api/tour', id).toPromise()).json();
+  public async getAllDataForTour(): Promise<any> {
+    return (await this._http.get('/api/getalldatafortour').toPromise()).json();
+  }
+
+
+  public async getTourById(id: number): Promise<ServerResponse<any>> {
+    let result: ServerResponse<any> = new ServerResponse<any>();
+    try {
+      let response = (await this._http.get(`/api/tour/${id}`).toPromise());
+      result = this.parseResponse(response);
+    } catch (ex) {
+      result = this.parseResponse(ex);
+    }
+    return result;
   }
 
   public async addTour(tour: any): Promise<ServerResponse<any>>  {

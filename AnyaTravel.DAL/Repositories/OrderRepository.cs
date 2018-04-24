@@ -41,7 +41,8 @@ namespace AnyaTravel.DAL.Repositories
             Order resOrder;
             try
             {
-                resOrder = _dbSet.Remove(entity).Entity;
+                resOrder = await _dbSet.FirstOrDefaultAsync(p => p.Id == entity.Id);
+                resOrder = _dbSet.Remove(resOrder).Entity;
                 await _context.SaveChangesAsync();
             }
             catch
@@ -53,8 +54,10 @@ namespace AnyaTravel.DAL.Repositories
 
         async Task<IEnumerable<Order>> IRepository<Order, int>.Get()
         {
-            IEnumerable<Order> cities = await _dbSet.ToListAsync();
-            return cities;
+            IEnumerable<Order> orders = await _dbSet.Include(p => p.User)
+            .Include(p => p.Tour.CityFrom).Include(p => p.Tour.FoodType).Include(p => p.Tour.Hotel.City)
+            .Include(p => p.OrderStatus).ToListAsync();
+            return orders;
         }
 
         async Task<Order> IRepository<Order, int>.Get(int id)
@@ -62,7 +65,7 @@ namespace AnyaTravel.DAL.Repositories
             Order order;
             try
             {
-                order = await _dbSet.FindAsync(id);
+                order = await Task.Factory.StartNew(() => _dbSet.Include(p => p.User).Where(o => o.Id == id).FirstOrDefault());
             }
             catch
             {
@@ -73,7 +76,10 @@ namespace AnyaTravel.DAL.Repositories
 
         async Task<IEnumerable<Order>> IRepository<Order, int>.Get(Func<Order, bool> predicate)
         {
-            IEnumerable<Order> cities = await Task.Factory.StartNew(() => _dbSet.Where(predicate).ToList() as IEnumerable<Order>);
+            IEnumerable<Order> cities = await Task.Factory.StartNew(() => _dbSet.Include(p => p.User)
+            .Include(p => p.Tour.CityFrom).Include(p => p.Tour.FoodType).Include(p => p.Tour.Hotel.City)
+            .Include(p => p.OrderStatus)
+            .Where(predicate).ToList() as IEnumerable<Order>);
             return cities;
         }
 
@@ -87,7 +93,9 @@ namespace AnyaTravel.DAL.Repositories
             Order resOrder;
             try
             {
-                resOrder = _dbSet.Update(entity).Entity;
+               resOrder  = await _dbSet.FirstOrDefaultAsync(p => p.Id == entity.Id);
+                resOrder.OrderStatus = entity.OrderStatus;
+                resOrder = _dbSet.Update(resOrder).Entity;
                 await _context.SaveChangesAsync();
             }
             catch

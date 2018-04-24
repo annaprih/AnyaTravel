@@ -8,7 +8,7 @@
         <th>Код тура</th>
         <th>ФИО заказчика</th>
         <th>Email заказчика</th>
-        <th>Цена</th>
+        <th>Цена$</th>
         <th>Статус заказа</th>
         <th>Действие</th>
       </tr>
@@ -18,7 +18,7 @@
         <td>{{ order.id }}</td>
         <td>{{ order.date | amLocal | amDateFormat: 'DD-MM-YYYY'}}</td>
         <td>{{ order.tour.id}}</td>
-        <td>{{ order.user.fIO }}</td>
+        <td>{{ order.user.fio }}</td>
         <td>{{ order.user.email}}</td>
         <td>{{ order.price }}</td>
         <td *ngIf="order.orderStatus.status==1">Оплачен</td>

@@ -24,6 +24,9 @@ namespace AnyaTravel.API.AutoMapperConfig
             CreateMap<Hotel, HotelDTO>().PreserveReferences().ReverseMap();
             CreateMap<Order, OrderDTO>().PreserveReferences().ReverseMap();
             CreateMap<Func<Order,bool>, Func<OrderDTO, bool>>().PreserveReferences().ReverseMap();
+            CreateMap<CurrentUser, UserDTO>().PreserveReferences().ReverseMap();
+            CreateMap<User, UserDTO>().PreserveReferences().IgnoreAllPropertiesWithAnInaccessibleSetter().IgnoreAllSourcePropertiesWithAnInaccessibleSetter().ReverseMap();
+
 
             CreateMap<TourDTO, TourView>().ReverseMap();
             CreateMap<CityDTO, CityView>().ReverseMap();

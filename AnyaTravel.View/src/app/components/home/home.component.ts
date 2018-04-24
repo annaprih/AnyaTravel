@@ -71,4 +71,8 @@ export class HomeComponent implements OnInit {
       console.log(response);
     }
   }
+
+  async tourView(id) {
+this.router.navigate([`tourView/${id}`]);
+}
 }

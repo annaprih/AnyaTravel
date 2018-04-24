@@ -24,12 +24,11 @@ export class AdminPageComponent implements OnInit {
   constructor(private httpAuthService: HttpAuthService,
               private orderService: OrderService,
               private router: Router) {
-     this.dtOptions = {
+    this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
       paging: true
     };
-
     this.dtTrigger.next();
   }
 
@@ -41,13 +40,11 @@ export class AdminPageComponent implements OnInit {
   }
 
   async deleteOrder(id) {
-    this.load = true;
     let response: ServerResponse<any> = await this.orderService.deleteOrder(id);
     if (response.statusCode == 200) {
       this.dtElement.dtInstance.then(async (dtInstance: DataTables.Api) => {
         dtInstance.destroy();
         this.orders = await this.orderService.getAllOrders();
-        this.load = false;
         this.dtTrigger.next();
       });
     } else {
@@ -56,15 +53,14 @@ export class AdminPageComponent implements OnInit {
   }
 
   async updateOrder(tourId) {
-    this.load = true;
     let response: ServerResponse<any> = await this.orderService.updateOrder(tourId);
     if (response.statusCode == 200) {
       this.dtElement.dtInstance.then(async (dtInstance: DataTables.Api) => {
         dtInstance.destroy();
         this.orders = await this.orderService.getAllOrders();
-        this.load = false;
         this.dtTrigger.next();
       });
+
     } else {
       console.log(response);
     }
