@@ -20,7 +20,7 @@ export class TourService {
   }
 
   public async getAllDataForTour(): Promise<any> {
-    return (await this._http.get('/api/getalldatafortour').toPromise()).json();
+    return (await this._http.get('api/tour/getalldatafortour').toPromise()).json();
   }
 
 
@@ -40,6 +40,40 @@ export class TourService {
     let result: ServerResponse<any> = new ServerResponse<any>();
     try {
       let response = (await this._http.post(`api/tour`, tour).toPromise());
+      result = this.parseResponse(response);
+    } catch (ex) {
+      result = this.parseResponse(ex);
+    }
+    return result;
+  }
+
+  public async addCountry(country: any): Promise<ServerResponse<any>>  {
+
+    let result: ServerResponse<any> = new ServerResponse<any>();
+    try {
+      let response = (await this._http.post(`api/tour/addcountry`, country).toPromise());
+      result = this.parseResponse(response);
+    } catch (ex) {
+      result = this.parseResponse(ex);
+    }
+    return result;
+  }
+  public async addCity(city: any): Promise<ServerResponse<any>>  {
+
+    let result: ServerResponse<any> = new ServerResponse<any>();
+    try {
+      let response = (await this._http.post(`api/tour/addcity`, city).toPromise());
+      result = this.parseResponse(response);
+    } catch (ex) {
+      result = this.parseResponse(ex);
+    }
+    return result;
+  }
+  public async addHotel(hotel: any): Promise<ServerResponse<any>>  {
+
+    let result: ServerResponse<any> = new ServerResponse<any>();
+    try {
+      let response = (await this._http.post(`api/tour/addhotel`, hotel).toPromise());
       result = this.parseResponse(response);
     } catch (ex) {
       result = this.parseResponse(ex);

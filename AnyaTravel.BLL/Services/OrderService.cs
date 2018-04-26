@@ -12,11 +12,13 @@ namespace AnyaTravel.BLL.Services
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly ITourRepository _tourRepository;
         private readonly IMapper _mapper;
 
-        public OrderService(IOrderRepository orderRepository, IMapper mapper)
+        public OrderService(IOrderRepository orderRepository, ITourRepository tourRepository, IMapper mapper)
         {
             _orderRepository = orderRepository;
+            _tourRepository = tourRepository;
             _mapper = mapper;
         }
 
@@ -25,6 +27,12 @@ namespace AnyaTravel.BLL.Services
         async Task<OrderDTO> IService<OrderDTO, int>.Add(OrderDTO entity)
         {
             Order order = await _orderRepository.Add(_mapper.Map<OrderDTO, Order>(entity));
+            if (order != null)
+            {
+                Tour tour = await _tourRepository.Get(entity.Tour.Id);
+                tour.CountOfTours--;
+                tour = await _tourRepository.Update(tour);
+            }
             return _mapper.Map<Order, OrderDTO>(order);
         }
 

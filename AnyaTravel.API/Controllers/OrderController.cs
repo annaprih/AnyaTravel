@@ -49,14 +49,17 @@ namespace AnyaTravel.API.Controllers
             if (ModelState.IsValid)
             {
                 OrderDTO order = await AddOrderProp(tourId);
-                return Ok(order);
+                if(order!=null)
+                {
+                    return Ok(order);
+                }
+                return NotFound();
             }
             return BadRequest(ModelState);
         }
 
         private async Task<OrderDTO> AddOrderProp(int tourId)
         {
-
             OrderDTO order = new OrderDTO();
             CurrentUser user = await _userService.GetUser(User.Identity.Name);
             order.OrderStatus = new OrderStatusDTO { Status = 0 };
@@ -68,7 +71,10 @@ namespace AnyaTravel.API.Controllers
             {
                 order.Price = (int)(order.Tour.Price * 0.95);
             }
-            order = await _orderService.Add(order);
+            if (order.Tour.CountOfTours > 0)
+            {
+                order = await _orderService.Add(order);
+            }
             return order;
         }
 

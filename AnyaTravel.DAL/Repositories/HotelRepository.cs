@@ -53,8 +53,8 @@ namespace AnyaTravel.DAL.Repositories
 
         async Task<IEnumerable<Hotel>> IRepository<Hotel, int>.Get()
         {
-            IEnumerable<Hotel> cities = await _dbSet.ToListAsync();
-            return cities;
+            IEnumerable<Hotel> hotels = await Task.Factory.StartNew(() => _dbSet.Include(p => p.PlacementType) as IEnumerable<Hotel>);
+            return hotels;
         }
 
         async Task<Hotel> IRepository<Hotel, int>.Get(int id)
@@ -62,7 +62,7 @@ namespace AnyaTravel.DAL.Repositories
             Hotel hotel;
             try
             {
-                hotel = await _dbSet.FindAsync(id);
+                hotel = await Task.Factory.StartNew(() => _dbSet.Include(p => p.PlacementType).Where(t => t.Id == id).FirstOrDefault());
             }
             catch
             {

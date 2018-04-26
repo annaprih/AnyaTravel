@@ -41,7 +41,8 @@ namespace AnyaTravel.DAL.Repositories
             Tour resTour;
             try
             {
-                resTour = _dbSet.Remove(entity).Entity;
+                resTour = await _dbSet.FirstOrDefaultAsync(p => p.Id == entity.Id);
+                resTour = _dbSet.Remove(resTour).Entity;
                 await _context.SaveChangesAsync();
             }
             catch
@@ -87,7 +88,9 @@ namespace AnyaTravel.DAL.Repositories
             Tour resTour;
             try
             {
-                resTour = _dbSet.Update(entity).Entity;
+                resTour = await _dbSet.FirstOrDefaultAsync(p => p.Id == entity.Id);
+                await MoveTourProperties(entity, resTour);
+                resTour = _dbSet.Update(resTour).Entity;
                 await _context.SaveChangesAsync();
             }
             catch
@@ -95,6 +98,18 @@ namespace AnyaTravel.DAL.Repositories
                 resTour = null;
             }
             return resTour;
+        }
+
+        private async Task MoveTourProperties(Tour entity, Tour resTour)
+        {
+            resTour.CityFrom = await _context.CitiesFrom.FirstOrDefaultAsync(p => p.Id == entity.CityFrom.Id);
+            resTour.CountOfTours = entity.CountOfTours;
+            resTour.DateFrom = entity.DateFrom;
+            resTour.DateTo = entity.DateTo;
+            resTour.FoodType = await _context.FoodTypes.FirstOrDefaultAsync(p => p.Id == entity.FoodType.Id);
+            resTour.Hotel = await _context.Hotels.FirstOrDefaultAsync(p => p.Id == entity.Hotel.Id);
+            resTour.Price = entity.Price;
+            resTour.TransportType = await _context.TransportTypes.FirstOrDefaultAsync(p => p.Id == entity.TransportType.Id);
         }
     }
 }

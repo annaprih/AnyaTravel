@@ -15,7 +15,7 @@
         <div class="card-text">Дата окончания тура: {{tour.dateTo| amLocal | amDateFormat: 'DD-MM-YYYY'}}</div>
         <div class="card-text">Город отправления: {{tour.cityFrom.city}}</div>
         <div class="card-text">Цена $: {{tour.price}}</div>
-        <a href="{{photoLink}}" target="_blank">Больше фото</a>
+        <a href="{{photoLink}}" target="_blank">Фото</a>
         <button *ngIf="auth" class="btn btn-lg btn-primary btn-block col-sm-4 offset-sm-4" (click)="makeOrder(tour.id)">Заказать</button>
       </div>
     </div>

@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
   public async logout() {
     await this.httpAuthService.logout();
     this.currentUser = await this.httpAuthService.GetCurrentUser();
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
 
  }

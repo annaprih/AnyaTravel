@@ -28,7 +28,9 @@ namespace AnyaTravel.BLL.Services
 
         async Task<TourDTO> IService<TourDTO, int>.Delete(TourDTO entity)
         {
-            Tour tour = await _tourRepository.Delete(_mapper.Map<TourDTO, Tour>(entity));
+            Tour tour = await _tourRepository.Get(entity.Id);
+            tour.CountOfTours = 0;
+            tour = await _tourRepository.Update(tour);
             return _mapper.Map<Tour, TourDTO>(tour);
         }
 

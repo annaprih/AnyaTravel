@@ -20,6 +20,8 @@ namespace AnyaTravel.API.Controllers
         private readonly ITransportTypeService _transportTypeService;
         private readonly ITourTypeService _tourTypeService;
         private readonly ICityFromService _cityFromService;
+        private readonly IPlacementTypeService _placementTypeService;
+
 
         private readonly IMapper _mapper;
 
@@ -27,7 +29,7 @@ namespace AnyaTravel.API.Controllers
             ICityService cityService, IHotelService hotelService,
             IFoodTypeService foodTypeService, ITransportTypeService transportTypeService,
             ITourTypeService tourTypeService, ICityFromService cityFromService,
-            IMapper mapper)
+            IPlacementTypeService placementTypeService, IMapper mapper)
         {
             _tourService = tourService;
             _countryService = countryService;
@@ -37,6 +39,7 @@ namespace AnyaTravel.API.Controllers
             _transportTypeService = transportTypeService;
             _tourTypeService = tourTypeService;
             _cityFromService = cityFromService;
+            _placementTypeService = placementTypeService;
             _mapper = mapper;
         }
 
@@ -53,11 +56,14 @@ namespace AnyaTravel.API.Controllers
         public async Task<IActionResult> GetAllDataForTour()
         {
             TourView tour = new TourView();
-            tour.Hotel = await _hotelService.Get();
-            tour.FoodType = await _foodTypeService.Get();
-            tour.TourType = await _tourTypeService.Get();
-            tour.TransportType = await _transportTypeService.Get();
-            tour.CityFrom = await _cityFromService.Get();
+            tour.Hotels = await _hotelService.Get();
+            tour.FoodTypes = await _foodTypeService.Get();
+            tour.TourTypes = await _tourTypeService.Get();
+            tour.TransportTypes = await _transportTypeService.Get();
+            tour.CitiesFrom = await _cityFromService.Get();
+            tour.Cities = await _cityService.Get();
+            tour.Countries = await _countryService.Get();
+            tour.PlacementTypes = await _placementTypeService.Get();
             return Ok(tour);
         }
 

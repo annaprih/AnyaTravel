@@ -58,13 +58,11 @@ export class HomeComponent implements OnInit {
   }
 
   async deleteTour(id) {
-    this.load = true;
     let response: ServerResponse<any> = await this.tourService.deleteTour(id);
     if (response.statusCode == 200) {
       this.dtElement.dtInstance.then(async (dtInstance: DataTables.Api) => {
         dtInstance.destroy();
         this.tours = await this.tourService.getAllTours();
-        this.load = false;
         this.dtTrigger.next();
       });
     } else {
@@ -75,4 +73,12 @@ export class HomeComponent implements OnInit {
   async tourView(id) {
 this.router.navigate([`tourView/${id}`]);
 }
+
+  async updateTour(id) {
+    this.router.navigate([`updateTour/${id}`]);
+  }
+
+  async navigateToAdd() {
+    this.router.navigate([`createTour`]);
+  }
 }
