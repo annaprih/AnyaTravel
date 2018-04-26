@@ -20,15 +20,13 @@ namespace AnyaTravel.API.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
-        //TODO: delete in prod
-      //  [Authorize(Roles = "Admin")]
-        [Route("api/user")]
-        public async Task<IActionResult> Get()
-        {
-            IEnumerable<UserDTO> users = await _userService.GetUsers();
-            return Ok(users);
-        }
+        //[HttpGet]
+        //[Route("api/user")]
+        //public async Task<IActionResult> Get()
+        //{
+        //    IEnumerable<UserDTO> users = await _userService.GetUsers();
+        //    return Ok(users);
+        //}
 
         [HttpPut]
         [Route("api/user")]

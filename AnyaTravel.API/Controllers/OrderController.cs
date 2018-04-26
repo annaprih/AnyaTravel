@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AnyaTravel.BLL.Data;
 using AnyaTravel.BLL.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnyaTravel.API.Controllers
 {
     [Produces("application/json")]
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
@@ -28,6 +30,7 @@ namespace AnyaTravel.API.Controllers
 
         [HttpGet]
         [Route("api/order")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Get()
         {
             IEnumerable<OrderDTO> orders = await _orderService.Get();
@@ -49,8 +52,47 @@ namespace AnyaTravel.API.Controllers
             if (ModelState.IsValid)
             {
                 OrderDTO order = await AddOrderProp(tourId);
-                if(order!=null)
+                if (order != null)
                 {
+                    return Ok(order);
+                }
+                return NotFound();
+            }
+            return BadRequest(ModelState);
+        }
+
+
+        [HttpPut]
+        [Route("api/order/{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Update([Required]int id)
+        {
+            if (ModelState.IsValid)
+            {
+                OrderDTO order = await _orderService.Get(id);
+                if (order != null)
+                {
+                    order.OrderStatus = new OrderStatusDTO { Status = 1 };
+                    order = await _orderService.Update(order);
+                    return Ok(order);
+                }
+                return NotFound();
+            }
+            return BadRequest(ModelState);
+        }
+
+
+        [HttpDelete]
+        [Route("api/order/{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete([Required]int id)
+        {
+            if (ModelState.IsValid)
+            {
+                OrderDTO order = await _orderService.Get(id);
+                if (order != null)
+                {
+                    order = await _orderService.Delete(order);
                     return Ok(order);
                 }
                 return NotFound();
@@ -77,42 +119,5 @@ namespace AnyaTravel.API.Controllers
             }
             return order;
         }
-
-        [HttpPut]
-        [Route("api/order/{id}")]
-        public async Task<IActionResult> Update([Required]int id)
-        {
-            if (ModelState.IsValid)
-            {
-                OrderDTO order = await _orderService.Get(id);
-                if (order != null)
-                {
-                    order.OrderStatus = new OrderStatusDTO { Status = 1 };
-                    order = await _orderService.Update(order);
-                    return Ok(order);
-                }
-                return NotFound();
-            }
-            return BadRequest(ModelState);
-        }
-
-
-        [HttpDelete]
-        [Route("api/order/{id}")]
-        public async Task<IActionResult> Delete([Required]int id)
-        {
-            if (ModelState.IsValid)
-            {
-                OrderDTO order = await _orderService.Get(id);
-                if (order != null)
-                {
-                    order = await _orderService.Delete(order);
-                    return Ok(order);
-                }
-                return NotFound();
-            }
-            return BadRequest(ModelState);
-        }
-
     }
 }

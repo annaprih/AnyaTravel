@@ -5,11 +5,13 @@ using AnyaTravel.API.ViewModels;
 using AnyaTravel.BLL.Data;
 using AnyaTravel.BLL.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnyaTravel.API.Controllers
 {
     [Produces("application/json")]
+    [Authorize(Roles = "Admin")]
     public class TourController : Controller
     {
         private readonly ITourService _tourService;
@@ -21,8 +23,6 @@ namespace AnyaTravel.API.Controllers
         private readonly ITourTypeService _tourTypeService;
         private readonly ICityFromService _cityFromService;
         private readonly IPlacementTypeService _placementTypeService;
-
-
         private readonly IMapper _mapper;
 
         public TourController(ITourService tourService, ICountryService countryService,
@@ -44,6 +44,7 @@ namespace AnyaTravel.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         [Route("api/tour")]
         public async Task<IActionResult> Get()
         {
@@ -69,6 +70,7 @@ namespace AnyaTravel.API.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         [Route("api/tour/{id}")]
         public async Task<IActionResult> Get([Required]int id)
         {

@@ -88,8 +88,8 @@ export class EditTourComponent implements OnInit{
   async update() {
     this.load = true;
 
-    this.tour.dateFrom = new Date(this.dateModel.beginDate.year, this.dateModel.beginDate.month, this.dateModel.beginDate.day);
-    this.tour.dateTo = new Date(this.dateModel.endDate.year, this.dateModel.endDate.month, this.dateModel.endDate.day);
+    this.tour.dateFrom = new Date(this.dateModel.beginDate.year, this.dateModel.beginDate.month -1, this.dateModel.beginDate.day + 1);
+    this.tour.dateTo = new Date(this.dateModel.endDate.year, this.dateModel.endDate.month -1, this.dateModel.endDate.day + 1);
 
     let response: ServerResponse<any> = await this.tourService.updateTour(this.tour);
     if (response.statusCode == 200) {
