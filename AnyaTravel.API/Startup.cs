@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace AnyaTravel.API
@@ -20,11 +21,16 @@ namespace AnyaTravel.API
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
-       
+
         public void ConfigureServices(IServiceCollection services)
         {
             MapperConfiguration configMapper = new MapperConfiguration(
@@ -32,10 +38,11 @@ namespace AnyaTravel.API
               );
 
             services.AddMvc()
-     .AddJsonOptions(options => {
-        options.SerializerSettings.ReferenceLoopHandling =
-        Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-    });
+     .AddJsonOptions(options =>
+     {
+         options.SerializerSettings.ReferenceLoopHandling =
+         Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+     });
 
             services.AddSwaggerGen(c =>
             {
@@ -84,10 +91,11 @@ namespace AnyaTravel.API
 
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IUserService userService, IStartDataService startDataService)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IUserService userService,
+            IStartDataService startDataService, ILoggerFactory loggerFactory)
         {
             //userService.SeedDatabse().GetAwaiter().GetResult();
-           // startDataService.AddData().GetAwaiter().GetResult();
+            // startDataService.AddData().GetAwaiter().GetResult();
 
 
             if (env.IsDevelopment())
@@ -104,6 +112,9 @@ namespace AnyaTravel.API
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "AnyaTravel V1");
             });
+
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
             app.UseMvc(routeBuilder =>
             {
