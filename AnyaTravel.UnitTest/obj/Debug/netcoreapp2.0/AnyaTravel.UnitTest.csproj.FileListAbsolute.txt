@@ -1,0 +1,14 @@
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.UnitTest.deps.json
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.UnitTest.runtimeconfig.json
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.UnitTest.runtimeconfig.dev.json
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.UnitTest.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.UnitTest.pdb
+D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.csprojResolveAssemblyReference.cache
+D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.csproj.CoreCompileInputs.cache
+D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.AssemblyInfoInputs.cache
+D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.AssemblyInfo.cs
+D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.pdb

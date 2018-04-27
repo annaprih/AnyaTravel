@@ -1,0 +1,9 @@
+language: csharp  
+sudo: required  
+dist: trusty  
+mono: none
+dotnet: 2.1.100
+before_script:
+  - dotnet restore
+script:  
+  - dotnet test ./AnyaTravel.UnitTest -c Release -f netcoreapp2.0
