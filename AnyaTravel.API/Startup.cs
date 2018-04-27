@@ -80,7 +80,8 @@ namespace AnyaTravel.API
 
 
             services.AddDbContext<ContextDB>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("AnyaTravel.API")));
+              //  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("AnyaTravel.API")));
+             options.UseNpgsql(Configuration.GetConnectionString("PostgresConnection")));
 
             services.AddIdentity<User, IdentityRole>(opts =>
             {
@@ -95,7 +96,7 @@ namespace AnyaTravel.API
             IStartDataService startDataService, ILoggerFactory loggerFactory)
         {
             //userService.SeedDatabse().GetAwaiter().GetResult();
-            // startDataService.AddData().GetAwaiter().GetResult();
+            //startDataService.AddData().GetAwaiter().GetResult();
 
 
             if (env.IsDevelopment())
