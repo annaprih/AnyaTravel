@@ -8,6 +8,7 @@ namespace AnyaTravel.UnitTest
         [TestMethod]
         public void TestMethod1()
         {
+            Assert.AreEqual(0, 0);
         }
     }
 }

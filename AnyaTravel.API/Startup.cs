@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace AnyaTravel.API
 {
@@ -34,8 +34,14 @@ namespace AnyaTravel.API
             services.AddMvc()
      .AddJsonOptions(options => {
         options.SerializerSettings.ReferenceLoopHandling =
-            Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+        Newtonsoft.Json.ReferenceLoopHandling.Ignore;
     });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "AnyaTravel", Version = "v1" });
+            });
+
             services.AddSingleton(ctx => configMapper.CreateMapper());
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICityFromRepository, CityFromRepository>();
@@ -92,7 +98,12 @@ namespace AnyaTravel.API
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseAuthentication();
+            app.UseSwagger();
 
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "AnyaTravel V1");
+            });
 
             app.UseMvc(routeBuilder =>
             {
