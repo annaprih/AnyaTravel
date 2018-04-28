@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AnyaTravel.API.ViewModels;
 using AnyaTravel.BLL.Data;
 using AnyaTravel.BLL.Infrastructure;
@@ -19,14 +18,6 @@ namespace AnyaTravel.API.Controllers
         {
             _userService = userService;
         }
-
-        //[HttpGet]
-        //[Route("api/user")]
-        //public async Task<IActionResult> Get()
-        //{
-        //    IEnumerable<UserDTO> users = await _userService.GetUsers();
-        //    return Ok(users);
-        //}
 
         [HttpPut]
         [Route("api/user")]

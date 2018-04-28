@@ -12,3 +12,10 @@ D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.As
 D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.AssemblyInfo.cs
 D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.dll
 D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.pdb
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.BLL.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.DAL.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.BLL.pdb
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.DAL.pdb
+D:\AnyaTravel\AnyaTravel.UnitTest\obj\Debug\netcoreapp2.0\AnyaTravel.UnitTest.csproj.CopyComplete
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.API.dll
+D:\AnyaTravel\AnyaTravel.UnitTest\bin\Debug\netcoreapp2.0\AnyaTravel.API.pdb
