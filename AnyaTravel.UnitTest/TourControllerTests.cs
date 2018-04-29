@@ -110,10 +110,10 @@ namespace AnyaTravel.UnitTest
             Mock<ITourService> mock = new Mock<ITourService>();
             mock.Setup(repo => repo.Get(tour.Id)).ReturnsAsync(tour);
             mock.Setup(repo => repo.Update(tour)).ReturnsAsync(tour);
-            //Mapper.Initialize(cfg =>
-            //{
-            //    cfg.AddProfile(new AutoMapperProfile());
-            //});
+            Mapper.Initialize(cfg =>
+            {
+                cfg.AddProfile(new AutoMapperProfile());
+            });
 
             TourController controller = new TourController(mock.Object, null, null, null, null, null, null, null, null, Mapper.Instance);
             IActionResult result = await controller.Update(tour);
