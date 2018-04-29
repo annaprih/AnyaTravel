@@ -49,10 +49,10 @@ namespace AnyaTravel.UnitTest
             mockOrder.Setup(repo => repo.Add(order)).ReturnsAsync(order);
             mockTour.Setup(repo => repo.Get(It.IsAny<int>())).ReturnsAsync(new TourDTO());
             mockUser.Setup(repo => repo.GetUser(It.IsAny<string>())).ReturnsAsync(new CurrentUser());
-            //Mapper.Initialize(cfg =>
-            //       {
-            //           cfg.AddProfile(new AutoMapperProfile());
-            //       });
+            Mapper.Initialize(cfg =>
+                   {
+                       cfg.AddProfile(new AutoMapperProfile());
+                   });
 
             OrderController controller = new OrderController(mockOrder.Object, mockUser.Object, mockTour.Object, Mapper.Instance);
             controller.ModelState.AddModelError("", "");
