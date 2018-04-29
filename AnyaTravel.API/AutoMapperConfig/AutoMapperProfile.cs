@@ -2,8 +2,6 @@
 using AnyaTravel.BLL.Data;
 using AnyaTravel.API.ViewModels;
 using AnyaTravel.DAL.Models;
-using System.Collections;
-using System.Collections.Generic;
 using System;
 
 namespace AnyaTravel.API.AutoMapperConfig

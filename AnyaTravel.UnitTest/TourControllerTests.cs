@@ -4,12 +4,10 @@ using AnyaTravel.BLL.Data;
 using AnyaTravel.BLL.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace AnyaTravel.UnitTest
